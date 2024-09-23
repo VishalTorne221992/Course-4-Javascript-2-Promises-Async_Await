@@ -29,8 +29,9 @@ function showPosts_Promise(){
                 const data = Promise.race([
                     posts,
                     new Promise((resolve, reject) => {;  
+                      // 6000 Milisecs or < 5500 millisecs to receive response  
                       // Reject after 5 seconds
-                      // Try 6000 milliseconds to reject the fetch request or request timeout
+                      // Try 5000 milliseconds to reject the fetch request or request timeout
                       setTimeout(() => reject(new Error("Operation timed out")), 6000);
                     }),
                   ])
@@ -76,8 +77,7 @@ function showPosts_Promise(){
         title.id = 'Post_title';
         title.innerHTML = 'Posts :';
         title.setAttribute('style','padding-bottom:12px;');
-        showElement.appendChild(title)
-        console.log(data.posts);
+        showElement.appendChild(title);
         data.posts.map((x) => {
              let para = document.createElement('p');
              para.innerText = JSON.stringify(x.title);
@@ -86,8 +86,6 @@ function showPosts_Promise(){
              showElement.appendChild(space);
         })
         showElement.children[0].remove();
-        
-        
 
     }
     
@@ -101,6 +99,7 @@ function getPosts(){
 
         setTimeout(() => {
 
+              
             const response = fetch('https://dummyjson.com/posts')
                              .then(res => res.json())
 

@@ -40,6 +40,7 @@ function showPosts(e){
 
     }
 
+    btnShowPosts.textContent = 'Hide Post';
 
     function displayData(data){
         if(Executed) return;
@@ -49,7 +50,6 @@ function showPosts(e){
         title.innerHTML = 'Posts :';
         title.setAttribute('style','padding-bottom:12px;');
         showElement.appendChild(title)
-        console.log(data.posts);
         data.posts.map((x) => {
              let para = document.createElement('p');
              para.innerText = JSON.stringify(x.title);
@@ -60,13 +60,10 @@ function showPosts(e){
         showElement.children[0].remove();
         
         btnShowPosts.textContent = 'Hide Post';
-
-       
        
     }
-    show(displayData)
-    
-    console.log(showElement);
+
+    show(displayData);
 
     }else{
 
