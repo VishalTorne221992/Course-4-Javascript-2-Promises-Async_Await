@@ -1,0 +1,35 @@
+*, ::before, ::after{
+   
+    margin: 0;
+    padding: 0;
+}
+
+#Btn_ShowPosts{
+    
+    border: 2px solid rgb(200, 255, 1);
+    filter: drop-shadow(2px 0px 18px rgb(200, 255, 1));
+    cursor: pointer;
+    color: antiquewhite;
+}
+
+
+#Btn_ShowPosts:hover{
+    
+    filter: drop-shadow(1px 0px 12px rgb(200, 255, 1)) drop-shadow(1px 0px 12px rgb(200, 255, 1)) drop-shadow(1px 0px 12px white);
+    color: white;
+}
+
+.hide{
+    display: none;
+}
+
+.CL_Btn{
+    position: absolute; 
+    top: 50px; 
+}
+
+.Cl_Post{
+    display: block;
+    position: absolute; 
+    top: 110px;
+}
